@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <ctype.h>
 
 
 // Function to print the first line of an input stream that replaces a user-defined sepeartor with \n
@@ -26,6 +27,13 @@ main (int argc, char **argv)
       case '?':
         if (optopt == 's')
           fprintf (stderr, "Error: option -%c requires and argument.\n", optopt);
+        else if (isprint (optopt))
+          fprintf (stderr, "Unknown option `-%c'.\n", optopt);
+        else
+          fprintf (stderr,
+                   "Unknown option character `\\x%x'.\n",
+                   optopt);
+        return 1;
     }
   }
   int counter = 1;
