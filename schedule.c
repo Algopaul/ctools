@@ -11,6 +11,9 @@
 // multiple sub-jobs but then my account was blocked because I submitted to
 // many small jobs; so this now chunks small jobs back together so I can launch
 // ca. 30 minute long jobs, which is what the admin wanted me to do.
+//
+// Also: When I submit more than 1000~2000 jobs; my jobs are not scheduled at
+// all and just crash so I implement a `submit_or_wait` function
 
 // TODO: implement check that ensures total length of commands is not longer
 // than previously alloted
