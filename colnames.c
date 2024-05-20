@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 // Function to print the first line of an input stream that replaces a
-// user-defined sepeartor with \n and adds the column number, if requested.
+// user-defined separator with \n and adds the column number, if requested.
 // Example use: cat table.csv | colnames -ns ','
 int main(int argc, char **argv) {
   opterr = 0;
